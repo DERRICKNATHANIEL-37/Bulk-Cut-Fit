@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULK-CUT-FIT | Member Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Apply Rancho font to all elements */
+        body, button, input, h1, h2, h3, p, a {
+            font-family: 'Rancho', cursive;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Login Page Styling */
+        body.gym-login-page {
+            background: linear-gradient(135deg, #443f3f, #000000, #fdfdfb);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: rgb(255, 255, 255);
+        }
+
+        .gym-login-container {
+            display: flex;
+            background: rgb(0, 0, 0);
+            border-radius: 100px;
+            overflow: hidden;
+            width: 1020px;
+            height:600px;
+            box-shadow: 04px 10px 20px 20px rgb(124, 115, 115);
+        }
+
+        .gym-branding {
+            padding: 3px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gym-logo {
+            max-width: 100%;
+            margin-bottom: 1px;
+        }
+
+        .gym-auth-forms {
+            flex: 1;
+            padding: 40px;
+            background: white;
+            color: #333;
+        }
+
+        .gym-form {
+            display: none;
+        }
+
+        .gym-form.active {
+            display: block;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: #777;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            border-color: #00ff1a;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 28, 154, 0.3);
+        }
+
+        .show-password {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .gym-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .login-btn {
+            background: #0634ef;
+            color: rgb(225, 225, 225);
+        }
+
+        .signup-btn {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .gym-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin: 10px 0 30px;
+            color: #777;
+            text-decoration: none;
+        }
+
+        .switch-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .switch-form a {
+            color: #4a6bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .neon-text {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #fe0000, 0 0 30px #4a6bff, 0 0 40px #4a6bff;
+            animation: neon-glow 0.9s ease-in-out infinite alternate;
+            font-size:40px;
+            font-weight: bold;
+        }
+
+        @keyframes neon-glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4a6bff, 0 0 40px #4a6bff;
+            }
+            to {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4a6bff, 0 0 20px #4a6bff;
+            }
+        }
+    </style>
+</head>
+<body class="gym-login-page">
+    <div class="gym-login-container">
+        <div class="gym-branding">
+            <img src="Images/titleloginlogo.png" alt="BULK-CUT-FIT" class="gym-logo">
+            <h1 class="neon-text">BULK-CUT-FIT</h1>
+            <p>Transform your body, elevate your mind</p>
+        </div>
+
+        <div class="gym-auth-forms">
+            <!-- Login Form -->
+            <form id="loginForm" class="gym-form active">
+                    <h2>MEMBER LOGIN</h2>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <span class="show-password"><i class="fas fa-eye"></i></span>
+                    </div>
+                    <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                    <button type="submit" class="gym-btn login-btn"><a href = home.html class = "gym-btn login-btn">LOGIN HERE</a> <i class="fas fa-arrow-right"></i></button>
+                    <p class="switch-form">Not a member? <a href="signup.html" class="signup-link">Sign up now </a></p></a></p>
+                </form>
+            </form>
+
+     
+    </script>
+</body>
+</html>
