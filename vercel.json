@@ -1,14 +1,22 @@
-@'
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    { "src": "/.*", "dest": "/index.html" }
-  ]
-}
-'@ | Out-File -FilePath vercel.json -Encoding utf8
+    "version": 2,
+    "builds": [
+      {
+        "src": "/*.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "/assets/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)", 
+        "dest": "/index.html",
+        "headers": {
+          "Cache-Control": "s-maxage=86400"
+        }
+      }
+    ]
+  }
