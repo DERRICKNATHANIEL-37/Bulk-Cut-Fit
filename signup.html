@@ -191,6 +191,7 @@
                 padding: 30px 20px;
             }
         }
+        
     </style>
 </head>
 <body class="gym-login-page">
@@ -235,6 +236,15 @@
                 <p class="switch-form">
                     Already have an account? <a href="index.html">Login here</a>
                 </p>
+                <script>
+                    const loginButton = document.getElementById('loginButton'); // Give your button id="loginButton"
+                  
+                    loginButton.addEventListener('click', function(event) {
+                      event.preventDefault(); // Prevent form submitting and refreshing
+                      window.location.href = "home.html"; // Redirect to home.html
+                    });
+                  </script>
+                  
             </form>
         </div>
     </div>

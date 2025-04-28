@@ -192,10 +192,17 @@
                     <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
                     <button type="submit" class="gym-btn login-btn"><a href = home.html class = "gym-btn login-btn">LOGIN HERE</a> <i class="fas fa-arrow-right"></i></button>
                     <p class="switch-form">Not a member? <a href="signup.html" class="signup-link">Sign up now </a></p></a></p>
-                </form>
             </form>
 
-     
+            <script>
+                const loginButton = document.getElementById('loginButton'); // Give your button id="loginButton"
+              
+                loginButton.addEventListener('click', function(event) {
+                  event.preventDefault(); // Prevent form submitting and refreshing
+                  window.location.href = "home.html"; // Redirect to home.html
+                });
+              </script>
+              
     </script>
 </body>
 </html>
